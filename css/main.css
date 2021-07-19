@@ -73,6 +73,22 @@ body {
   letter-spacing: 0.03em;
 }
 
+.logo {
+  font-family: Raleway;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+}
+
+.logo > span {
+  color: var(--accent-color);
+}
+
+.logo:hover, .logo:focus {
+  color: var(--accent-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .button {
   cursor: pointer;
   font-weight: 700;
@@ -145,35 +161,41 @@ body {
   justify-content: space-between;
 }
 
-.navigation {
-  display: flex;
-  align-items: center;
-}
-
 .header__contacts {
   display: flex;
   align-items: center;
 }
 
-.logo {
-  font-family: Raleway;
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
-}
-
-.logo > span {
-  color: var(--accent-color);
-}
-
-.logo:hover, .logo:focus {
-  color: var(--accent-color);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+.header__contacts-icon {
+  fill: var(--primary-text-color);
+  margin-right: 10px;
 }
 
 .header-logo {
   color: var(--title-text-color);
   margin-right: 93px;
+}
+
+.header__mail {
+  margin-right: 30px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.navigation__button {
+  color: var(--title-text-color);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+}
+
+.navigation__button:hover, .navigation__button:focus {
+  color: var(--accent-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navigation__button-block {
@@ -202,19 +224,6 @@ body {
   color: var(--accent-color);
 }
 
-.navigation__button {
-  color: var(--title-text-color);
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-}
-
-.navigation__button:hover, .navigation__button:focus {
-  color: var(--accent-color);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .contact {
   display: flex;
   align-items: center;
@@ -240,13 +249,16 @@ body {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.header__contacts-icon {
-  fill: var(--primary-text-color);
-  margin-right: 10px;
-}
-
-.header__mail {
-  margin-right: 30px;
+.hero {
+  max-width: 1600px;
+  margin-right: auto;
+  margin-left: auto;
+  height: 600px;
+  background: #c4c4c4;
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .hero__title {
@@ -261,18 +273,6 @@ body {
   padding-top: 200px;
 }
 
-.hero {
-  max-width: 1600px;
-  margin-right: auto;
-  margin-left: auto;
-  height: 600px;
-  background: #c4c4c4;
-  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/bg.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
 .hero__btn {
   margin-top: 30px;
 }
@@ -281,13 +281,13 @@ body {
   padding-top: 94px;
 }
 
-.features-list__icon {
-  padding: auto;
-}
-
 .features-list {
   display: flex;
   justify-content: space-between;
+}
+
+.features-list__icon {
+  padding: auto;
 }
 
 .features-list__text {
@@ -373,16 +373,6 @@ body {
   margin-left: -30px;
 }
 
-.card {
-  flex-basis: calc((100% / 4) - 30px);
-  margin-left: 30px;
-  background-color: var(--primary-white-color);
-  max-width: 270px;
-  padding-bottom: 30px;
-  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.12);
-  border-radius: 0px 0px 4px 4px;
-}
-
 .team__img {
   display: block;
   margin-bottom: 30px;
@@ -407,6 +397,16 @@ body {
   line-height: 1.19;
   text-align: center;
   margin-bottom: 16px;
+}
+
+.card {
+  flex-basis: calc((100% / 4) - 30px);
+  margin-left: 30px;
+  background-color: var(--primary-white-color);
+  max-width: 270px;
+  padding-bottom: 30px;
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 0px 0px 4px 4px;
 }
 
 .clients__head {
@@ -516,7 +516,7 @@ body {
   cursor: pointer;
 }
 
-.footer-socnets__circle .socnets__icon {
+.footer .footer-socnets__circle .socnets__icon {
   fill: var(--primary-white-color);
 }
 
@@ -715,6 +715,42 @@ body {
   transition: transform 250ms linear;
 }
 
+.modal__form {
+  margin-bottom: 15px;
+}
+
+.modal__form:hover input,
+.modal__form:focus input {
+  border: 1px solid var(--accent-color);
+  transition: solid 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.modal__form:hover .modal__icon,
+.modal__form:focus .modal__icon {
+  fill: var(--accent-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal__form-input {
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  padding-left: 40px;
+  outline: none;
+}
+
+.modal__form-input:focus, .modal__form-input:hover {
+  border-color: var(--accent-color);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal__form-input:focus + .modal__icon {
+  fill: var(--accent-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .modal__close-btn {
   position: absolute;
   width: 30px;
@@ -744,25 +780,6 @@ body {
   color: #212121;
 }
 
-.modal__form-input {
-  width: 100%;
-  height: 40px;
-  border-radius: 4px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  padding-left: 40px;
-  outline: none;
-}
-
-.modal__form-input:focus, .modal__form-input:hover {
-  border-color: var(--accent-color);
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal__form-input:focus + .modal__icon {
-  fill: var(--accent-color);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .modal__input-text {
   font-size: 12px;
   margin-bottom: 4px;
@@ -776,23 +793,6 @@ body {
   transform: translateY(-50%);
   color: #212121;
   fill: black;
-}
-
-.modal__form {
-  margin-bottom: 15px;
-}
-
-.modal__form:hover input,
-.modal__form:focus input {
-  border: 1px solid var(--accent-color);
-  transition: solid 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-}
-
-.modal__form:hover .modal__icon,
-.modal__form:focus .modal__icon {
-  fill: var(--accent-color);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal__input-wrapper {
@@ -811,12 +811,6 @@ body {
 .modal__form-text:focus {
   border: 1px solid #2196f3;
   transition: solid 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal__form-input::placeholder,
-.modal__form-text::placeholder {
-  font-size: 14px;
-  color: #c4c8d7;
 }
 
 .modal__input-check-text {
@@ -841,6 +835,11 @@ body {
   background-color: var(--accent-color);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   border: none;
+}
+
+.modal__form-input::placeholder, .modal__form-text::placeholder {
+  font-size: 14px;
+  color: #c4c8d7;
 }
 
 .modal__check-icon {
